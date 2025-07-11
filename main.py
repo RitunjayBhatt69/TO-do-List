@@ -4,8 +4,12 @@ import sqlite3
 from sqlite3 import Error
 
 app = Flask(__name__)
+# Home route
+@app.route('/')
+def home():
+    return jsonify({"message": "Welcome to the To-Do List API! Use /tasks for CRUD operations and /analytics for stats."}), 200
 
-   # Initialize database
+# Initialize database
 create_table()
 
    # Create a task
